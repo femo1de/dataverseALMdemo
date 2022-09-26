@@ -21,6 +21,6 @@ jobs:
       - uses: microsoft/powerplatform-actions/import-solution@v0
         with:
           environment-url: org24357a2b.crm4.dynamics.com
-          user-name: ${{ secrets.USERNAME }}
-          password-secret: ${{ secrets.PASSWORD }}
+          app-id: ${{ secrets.APP_ID }}
+          client-secret: ${{ secrets.CLIENT_SECRET }}
           solution-file: contoso_university_core_managed.zip
