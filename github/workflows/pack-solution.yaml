@@ -1,8 +1,9 @@
 name: Pack Contoso University Core
+
 on:
   push:
     paths:
-      contents/
+      - contents/
   workflow dispatch:
 jobs:
   build:
