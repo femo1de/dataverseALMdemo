@@ -6,9 +6,9 @@ on:
     
 env:
 #edit your values here
-  ENVIRONMENT_URL: 'https://org24357a2b.crm4.dynamics.com'
+  ENVIRONMENT_URL: 'https://org84e5d14c.crm4.dynamics.com'
   CLIENT_ID: ${{ secrets.APP_ID }}
-  TENANT_ID: 77344a67-d9ad-4abe-a7d3-a53194e7e9ac
+  TENANT_ID: ${{ secrets.TENANT_ID }}
   solution_exported_folder: 'out/exported/'
   solution_folder: 'out/solutions/'
   solution_target_folder: 'solutions/'
@@ -29,7 +29,7 @@ jobs:
       uses: microsoft/powerplatform-actions/export-solution@v0
       with:
         environment-url: ${{env.ENVIRONMENT_URL}}
-        app-id: ${{ secrets.APP_ID }}
+        app-id: ${{ env.CLIENT_ID }}
         client-secret: ${{ secrets.CLIENT_SECRET }}
         tenant-id: ${{env.TENANT_ID}}
         solution-name: ${{ github.event.inputs.solution_name }}
