@@ -12,7 +12,7 @@ on:
     inputs:
       solutionName:
         # Friendly description to be shown in the UI instead of 'name'
-        description: 'The solution to add to commit to the repo'
+        description: 'The solution to commit to the repo'
         # Input has to be provided for the workflow to run
         required: true
 
@@ -27,3 +27,5 @@ jobs:
     # Runs a single command using the runners shell
     - name: Send Debug Message
       run: echo "SolutionName is ${{ github.event.client_payload.solutionName }}"
+    - name: Send second debug message
+      run: echo "SolutionName is ${{ inputs.solutionName}}"
