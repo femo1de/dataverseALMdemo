@@ -6,15 +6,13 @@ name: Manual workflow
 # or API.
 on:
   repository_dispatch:
-    types: [powerAutomateEvent]
+    types: [commitSolutionToRepo]
   workflow_dispatch:
     # Inputs the workflow accepts.
     inputs:
-      name:
+      solutionName:
         # Friendly description to be shown in the UI instead of 'name'
-        description: 'Person to greet'
-        # Default value if no value is explicitly provided
-        default: 'World'
+        description: 'The solution to add to commit to the repo'
         # Input has to be provided for the workflow to run
         required: true
 
@@ -24,9 +22,8 @@ jobs:
   greet:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Runs a single command using the runners shell
-    - name: Send greeting
-      run: echo "Hello ${{ github.event.inputs.name }}"
+    - name: Send Debug Message
+      run: echo "SolutionName is ${{ github.event.client_payload.solutionName }}"
