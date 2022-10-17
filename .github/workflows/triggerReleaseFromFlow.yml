@@ -1,3 +1,5 @@
+name: CreateRelease
+
 on:
   repository_dispatch:
     types: [prepareRelease]
