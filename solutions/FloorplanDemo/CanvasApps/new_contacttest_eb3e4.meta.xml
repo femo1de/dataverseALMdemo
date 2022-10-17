@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CanvasApp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>new_contacttest_eb3e4</Name>
+  <AppVersion>2022-10-13T15:37:51Z</AppVersion>
+  <Status>Ready</Status>
+  <CreatedByClientVersion>3.22094.23.0</CreatedByClientVersion>
+  <MinClientVersion>3.22094.23.0</MinClientVersion>
+  <Tags>{"primaryDeviceWidth":"1366","primaryDeviceHeight":"768","supportsPortrait":"true","supportsLandscape":"true","primaryFormFactor":"Web","publisherVersion":"3.22094.23","minimumRequiredApiVersion":"2.2.0","hasComponent":"false","hasUnlockedComponent":"false","isUnifiedRootApp":"false","sienaVersion":"20221013T153423Z-3.22094.23.0"}</Tags>
+  <IsCdsUpgraded>0</IsCdsUpgraded>
+  <GalleryItemId xsi:nil="true"></GalleryItemId>
+  <BackgroundColor>RGBA(0,176,240,1)</BackgroundColor>
+  <DisplayName>ContactTest</DisplayName>
+  <Description xsi:nil="true"></Description>
+  <CommitMessage xsi:nil="true"></CommitMessage>
+  <Publisher xsi:nil="true"></Publisher>
+  <AuthorizationReferences>[]</AuthorizationReferences>
+  <ConnectionReferences>{"2d424333-7f17-44d5-a21e-9438c4c9a9e9":{"id":"/providers/microsoft.powerapps/apis/shared_logicflows","displayName":"Logic flows","iconUri":"https://connectoricons-prod.azureedge.net/releases/v1.0.1534/1.0.1534.2605/logicflows/icon.png","dataSources":["ImageMerge"],"dependencies":["2904fa07-9071-4c17-9ae8-9741916ca72c"],"dependents":[],"parameterHints":{"workflowName":{"value":"77812908-2a54-4da4-8023-e1ac4d60dc3a"},"workflowEntityId":{"value":"4edb3671-b93d-ed11-9db0-000d3adb510e"},"2904fa07-9071-4c17-9ae8-9741916ca72c":{"value":"shared_commondataserviceforapps"}},"parameterHintsV2":{"workflowName":{"value":"77812908-2a54-4da4-8023-e1ac4d60dc3a"},"workflowEntityId":{"value":"4edb3671-b93d-ed11-9db0-000d3adb510e"},"shared_commondataserviceforapps":{"value":"2904fa07-9071-4c17-9ae8-9741916ca72c"}},"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{},"apiTier":"Standard","actions":["Run"]},"2904fa07-9071-4c17-9ae8-9741916ca72c":{"id":"/providers/microsoft.powerapps/apis/shared_commondataserviceforapps","displayName":"Microsoft Dataverse","iconUri":"https://connectoricons-prod.azureedge.net/releases/v1.0.1588/1.0.1588.2938/commondataserviceforapps/icon.png","dataSources":[],"dependencies":[],"dependents":["2d424333-7f17-44d5-a21e-9438c4c9a9e9"],"parameterHints":{},"parameterHintsV2":{},"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{},"apiTier":"Premium"}}</ConnectionReferences>
+  <DatabaseReferences>{"default.cds":{"databaseDetails":{"referenceType":"Environmental","environmentName":"default.cds","overrideValues":{"status":"NotSpecified"}},"dataSources":{"Contacts":{"entitySetName":"contacts","logicalName":"contact"},"Pictures":{"entitySetName":"cr600_pictureses","logicalName":"cr600_pictures"}}}}</DatabaseReferences>
+  <AppComponents>[]</AppComponents>
+  <AppComponentDependencies>[]</AppComponentDependencies>
+  <CanConsumeAppPass>1</CanConsumeAppPass>
+  <CanvasAppType>0</CanvasAppType>
+  <BypassConsent>0</BypassConsent>
+  <AdminControlBypassConsent>0</AdminControlBypassConsent>
+  <EmbeddedApp xsi:nil="true"></EmbeddedApp>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <CdsDependencies>{"cdsdependencies":[{"logicalname":"contact","componenttype":1},{"logicalname":"cr600_pictures","componenttype":1}]}</CdsDependencies>
+  <IsCustomizable>1</IsCustomizable>
+  <BackgroundImageUri>/CanvasApps/new_contacttest_eb3e4_BackgroundImageUri</BackgroundImageUri>
+  <DocumentUri>/CanvasApps/new_contacttest_eb3e4_DocumentUri.msapp</DocumentUri>
+</CanvasApp>

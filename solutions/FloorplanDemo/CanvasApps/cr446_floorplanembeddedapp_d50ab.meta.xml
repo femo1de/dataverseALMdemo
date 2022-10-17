@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CanvasApp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>cr446_floorplanembeddedapp_d50ab</Name>
+  <AppVersion>2022-10-12T13:36:24Z</AppVersion>
+  <Status>Ready</Status>
+  <CreatedByClientVersion>3.22094.23.0</CreatedByClientVersion>
+  <MinClientVersion>3.22094.23.0</MinClientVersion>
+  <Tags>{"primaryDeviceWidth":"1366","primaryDeviceHeight":"768","supportsPortrait":"true","supportsLandscape":"true","primaryFormFactor":"Web","publisherVersion":"3.22094.23","minimumRequiredApiVersion":"2.2.0","hasComponent":"false","hasUnlockedComponent":"false","isUnifiedRootApp":"false","sienaVersion":"20221012T132902Z-3.22094.23.0"}</Tags>
+  <IsCdsUpgraded>0</IsCdsUpgraded>
+  <GalleryItemId xsi:nil="true"></GalleryItemId>
+  <BackgroundColor>RGBA(0,176,240,1)</BackgroundColor>
+  <DisplayName>FloorplanEmbeddedApp</DisplayName>
+  <Description xsi:nil="true"></Description>
+  <CommitMessage xsi:nil="true"></CommitMessage>
+  <Publisher xsi:nil="true"></Publisher>
+  <AuthorizationReferences>[]</AuthorizationReferences>
+  <ConnectionReferences>{"e267b7ae-7925-48de-8bf9-60d2d7f0b469":{"id":"/providers/microsoft.powerapps/apis/shared_logicflows","displayName":"Logic flows","iconUri":"https://connectoricons-prod.azureedge.net/releases/v1.0.1534/1.0.1534.2605/logicflows/icon.png","dataSources":["ImageMerge"],"dependencies":["17c89f61-4adc-495f-849d-933e9f079d45"],"dependents":[],"parameterHints":{"workflowName":{"value":"735009b2-ba4a-41a0-b37e-d2b1f7592ba2"},"workflowEntityId":{"value":"4edb3671-b93d-ed11-9db0-000d3adb510e"},"17c89f61-4adc-495f-849d-933e9f079d45":{"value":"shared_commondataserviceforapps"}},"parameterHintsV2":{"workflowName":{"value":"735009b2-ba4a-41a0-b37e-d2b1f7592ba2"},"workflowEntityId":{"value":"4edb3671-b93d-ed11-9db0-000d3adb510e"},"shared_commondataserviceforapps":{"value":"17c89f61-4adc-495f-849d-933e9f079d45"}},"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{},"apiTier":"Standard","actions":["Run"]},"17c89f61-4adc-495f-849d-933e9f079d45":{"id":"/providers/microsoft.powerapps/apis/shared_commondataserviceforapps","displayName":"Microsoft Dataverse","iconUri":"https://connectoricons-prod.azureedge.net/releases/v1.0.1588/1.0.1588.2938/commondataserviceforapps/icon.png","dataSources":[],"dependencies":[],"dependents":["e267b7ae-7925-48de-8bf9-60d2d7f0b469"],"parameterHints":{},"parameterHintsV2":{},"isOnPremiseConnection":false,"bypassConsent":false,"dataSets":{},"apiTier":"Premium"}}</ConnectionReferences>
+  <DatabaseReferences>{"default.cds":{"databaseDetails":{"referenceType":"Environmental","environmentName":"default.cds","overrideValues":{"status":"NotSpecified"}},"dataSources":{"Accounts":{"entitySetName":"accounts","logicalName":"account"},"Pictures":{"entitySetName":"cr600_pictureses","logicalName":"cr600_pictures"}}}}</DatabaseReferences>
+  <AppComponents>[]</AppComponents>
+  <AppComponentDependencies>[]</AppComponentDependencies>
+  <CanConsumeAppPass>1</CanConsumeAppPass>
+  <CanvasAppType>0</CanvasAppType>
+  <BypassConsent>0</BypassConsent>
+  <AdminControlBypassConsent>0</AdminControlBypassConsent>
+  <EmbeddedApp xsi:nil="true"></EmbeddedApp>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <CdsDependencies>{"cdsdependencies":[{"logicalname":"account","componenttype":1},{"logicalname":"cr600_pictures","componenttype":1}]}</CdsDependencies>
+  <IsCustomizable>1</IsCustomizable>
+  <BackgroundImageUri>/CanvasApps/cr446_floorplanembeddedapp_d50ab_BackgroundImageUri</BackgroundImageUri>
+  <DocumentUri>/CanvasApps/cr446_floorplanembeddedapp_d50ab_DocumentUri.msapp</DocumentUri>
+</CanvasApp>
