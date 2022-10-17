@@ -8,7 +8,8 @@ env:
   #edit your values here
   solution_target_folder: 'solutions/'
   solution_name: ${{ github.event.client_payload.solutionName }}
-  solution_release_folder: release/
+  solution_release_folder: 'release/'
+  solution_shipping_folder: 'out/'
 
 jobs:
   prepare_assets:
@@ -24,7 +25,7 @@ jobs:
       uses: microsoft/powerplatform-actions/pack-solution@v0
       with:
         solution-folder: ${{ env.solution_target_folder }}/${{ env.solution_name }}
-        solution-file: ${{ env.solution_target_folder }}/${{ env.solution_name }}.zip
+        solution-file: ${{ env.solution_shipping_folder }}/${{ env.solution_name }}.zip
         solution-type: Unmanaged
 
     - name: Upload the ready to ship solution to GH artifact store
