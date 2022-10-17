@@ -28,7 +28,7 @@ jobs:
       with:
         solution-folder: ${{ env.solution_target_folder }}/${{ env.solution_name }}
         solution-file: ${{ env.solution_shipping_folder }}/${{ env.solution_name }}.zip
-        solution-type: Unmanaged
+        solution-type: Managed
 
     - name: Upload the ready to ship solution to GH artifact store
       uses: actions/upload-artifact@v2
@@ -58,6 +58,7 @@ jobs:
         draft: false
         name: Release for ${{ env.solution_name }}
         generate_release_notes: true
+        tag_name: 'Automated Deployment'
         files: ${{ env.solution_release_folder}}/*
 
   deploy_solution:
