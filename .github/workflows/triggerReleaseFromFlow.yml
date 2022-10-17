@@ -50,9 +50,9 @@ jobs:
         name: managedSolutions
         path: ${{ env.solution_release_folder}}
 
-
     - name: Release
       uses: softprops/action-gh-release@v1
-      if: startsWith(github.ref, 'refs/tags/')
       with:
+        draft: true
+        name: Release for {{ env.solution_name }}
         files: ${{ env.solution_release_folder}}/*
