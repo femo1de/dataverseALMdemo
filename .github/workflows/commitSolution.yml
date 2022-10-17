@@ -5,7 +5,7 @@ on:
     types: [commitSolutionToRepo]
     
 env:
-#edit your values here
+  #edit your values here
   ENVIRONMENT_URL: 'https://org84e5d14c.crm4.dynamics.com'
   TENANT_ID: 8e3ece52-5ce7-40a6-b095-3398c5ed05ba
   solution_exported_folder: 'out/exported/'
