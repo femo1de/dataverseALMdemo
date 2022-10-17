@@ -1,0 +1,75 @@
+on:
+  repository_dispatch:
+    types: [prepareRelease]
+    
+env:
+  #edit your values here
+  ENVIRONMENT_URL: 'https://org84e5d14c.crm4.dynamics.com'
+  TENANT_ID: 8e3ece52-5ce7-40a6-b095-3398c5ed05ba
+  solution_exported_folder: 'out/exported/'
+  solution_folder: 'out/solutions/'
+  solution_target_folder: 'solutions/'
+  solution_name: ${{ github.event.client_payload.solutionName }}
+  solution_release_folder: release/
+
+jobs:
+  prepare_assets:
+    runs-on: windows-latest
+
+    steps:
+    - name: checkout code 
+      uses: actions/checkout@v2
+      with:
+        lfs: true
+
+    - name: Pack solution
+      uses: microsoft/powerplatform-actions/pack-solution@v0
+      with:
+        solution-folder: ${{ env.solution_source_folder }}/${{ env.solution_name }}
+        solution-file: ${{ env.solution_outbound_folder }}/${{ env.solution_name }}.zip
+        solution-type: Unmanaged
+
+    - name: Upload the ready to ship solution to GH artifact store
+      uses: actions/upload-artifact@v2
+      with:
+        name: managedSolutions
+        path: ${{ env.solution_shipping_folder}}/${{ env.solution_name }}.zip
+
+  create_release:
+    needs: [ prepare_assets ]
+    runs-on: windows-latest
+
+    steps:
+    - name: checkout code
+      uses: actions/checkout@v2
+      with:
+        lfs: true
+
+    - name: Fetch the ready to ship solution from GH artifact store
+      uses: actions/download-artifact@v2
+      with:
+        name: managedSolutions
+        path: ${{ env.solution_release_folder}}
+
+    - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          body: |
+            Release created for solution ${{ env.solution_name }}
+          draft: true
+          prerelease: false
+   
+    - name: Upload artifact for release
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ github.token }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ${{ env.solution_release_folder}}
+        asset_name: ${{ env.solution_name }}.zip
+        asset_content_type: application/zip
