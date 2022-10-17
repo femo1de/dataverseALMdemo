@@ -5,7 +5,7 @@ on:
       types: [created]  
       
 jobs:
-  convert-to-managed:
+  debugContext:
     runs-on: windows-latest
     steps:
       - name: Dump GitHub context
