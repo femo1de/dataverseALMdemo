@@ -1,0 +1,106 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr600_pictureses",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr600_pictures",
+    "Name": "Pictures",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "{Attachments}": "Attachments",
+      "cr600_image": "Image",
+      "cr600_imageid": "cr600_ImageId",
+      "cr600_inked": "Inked",
+      "cr600_inkedid": "cr600_InkedId",
+      "cr600_longfield": "LongField",
+      "cr600_name": "Name",
+      "cr600_picture": "Picture",
+      "cr600_pictureid": "cr600_PictureId",
+      "cr600_pictures_Annotations": "Notes",
+      "cr600_pictures_AsyncOperations": "System Jobs",
+      "cr600_pictures_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr600_pictures_DuplicateBaseRecord": "Duplicate Records (cr600_pictures_DuplicateBaseRecord)",
+      "cr600_pictures_DuplicateMatchingRecord": "Duplicate Records (cr600_pictures_DuplicateMatchingRecord)",
+      "cr600_pictures_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr600_pictures_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr600_pictures_ProcessSession": "Process Sessions",
+      "cr600_pictures_SyncErrors": "Sync Errors",
+      "cr600_picturesid": "Pictures",
+      "cr600_textfield": "TextField",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Pictures",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Pictures (Views)",
+    "Name": "_cr600_pictures_views",
+    "RelatedEntityName": "Pictures",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "7c5d7727-12b7-4db2-aabe-48a5d72c1e33": "Pictures Associated View",
+      "959457f9-7971-4ed2-b877-b367f9adce6f": "Pictures Advanced Find View",
+      "9703aab1-4cf9-405f-b364-cf0e249bc136": "Pictures Lookup View",
+      "a33ff90e-f92a-4d93-850d-da7f576048af": "Active Pictures",
+      "a5e1b027-289b-48e4-9834-72d50a273414": "Inactive Pictures"
+    }
+  },
+  {
+    "DisplayName": "Status (Pictures)",
+    "Name": "cr600_pictures_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Pictures"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Pictures",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Pictures)",
+    "Name": "cr600_pictures_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Pictures"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Pictures",
+    "Type": "OptionSetInfo"
+  }
+]

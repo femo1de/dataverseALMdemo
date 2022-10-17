@@ -1,0 +1,244 @@
+{
+  "properties": {
+    "connectionReferences": {
+      "shared_cloudmersiveimagepr": {
+        "runtimeSource": "invoker",
+        "connection": {
+          "connectionReferenceLogicalName": "new_sharedcloudmersiveimagepr_7aa1a"
+        },
+        "api": {
+          "name": "shared_cloudmersiveimagepr"
+        }
+      },
+      "shared_commondataserviceforapps": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "cr600_sharedcommondataserviceforapps_7ecf3"
+        },
+        "api": {
+          "name": "shared_commondataserviceforapps"
+        }
+      },
+      "shared_encodiandocumentmanager": {
+        "runtimeSource": "embedded",
+        "connection": {
+          "connectionReferenceLogicalName": "cr600_sharedencodiandocumentmanager_e044b"
+        },
+        "api": {
+          "name": "shared_encodiandocumentmanager"
+        }
+      }
+    },
+    "definition": {
+      "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
+      "contentVersion": "1.0.0.0",
+      "parameters": {
+        "$connections": {
+          "defaultValue": {},
+          "type": "Object"
+        },
+        "$authentication": {
+          "defaultValue": {},
+          "type": "SecureObject"
+        }
+      },
+      "triggers": {
+        "manual": {
+          "metadata": {
+            "operationMetadataId": "0497f5dd-4bfd-48ad-b8fc-7602b1b3a0df"
+          },
+          "type": "Request",
+          "kind": "PowerAppV2",
+          "inputs": {
+            "schema": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "title": "Input",
+                  "type": "string",
+                  "x-ms-dynamically-added": true,
+                  "description": "Please enter your input",
+                  "x-ms-content-hint": "TEXT"
+                }
+              },
+              "required": [
+                "text"
+              ]
+            }
+          }
+        }
+      },
+      "actions": {
+        "Composite": {
+          "runAfter": {
+            "Resize_an_image": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "e81fd025-3baa-4f86-980f-3517b32ca450"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_cloudmersiveimagepr",
+              "operationId": "Edit_CompositeBasic",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_cloudmersiveimagepr"
+            },
+            "parameters": {
+              "location": "top-left",
+              "baseImage/body": "@body('Download_a_file_or_an_image___BASE')",
+              "baseImage/fileName": "composite_base.png",
+              "layeredImage/body": "@body('Resize_an_image')",
+              "layeredImage/fileName": "composite_top.png"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Download_a_file_or_an_image___BASE": {
+          "runAfter": {},
+          "metadata": {
+            "operationMetadataId": "8abf51b8-8526-4b23-9d60-e7736383bffc"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "GetEntityFileImageFieldContent",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "contacts",
+              "recordId": "@triggerBody()['text']",
+              "fileImageFieldName": "new_floorplanbase",
+              "size": "full"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Download_a_file_or_an_image_TOP": {
+          "runAfter": {
+            "Download_a_file_or_an_image___BASE": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "31d0550f-4baf-4884-abe1-b1ec45fdf789"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "GetEntityFileImageFieldContent",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "contacts",
+              "recordId": "@triggerBody()['text']",
+              "fileImageFieldName": "new_floorplandrawing",
+              "size": "full"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Get_Image_Information_Base": {
+          "runAfter": {
+            "Download_a_file_or_an_image_TOP": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "b7b406f3-e305-493e-8410-68230ff9a502"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_encodiandocumentmanager",
+              "operationId": "GetImageInfo",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_encodiandocumentmanager"
+            },
+            "parameters": {
+              "operation/fileContent": "@body('Download_a_file_or_an_image___BASE')"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Resize_an_image": {
+          "runAfter": {
+            "Get_Image_Information_Top": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "541fc8e5-be2b-4502-a1ec-67509dafcc11"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_cloudmersiveimagepr",
+              "operationId": "Resize_ResizeSimple",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_cloudmersiveimagepr"
+            },
+            "parameters": {
+              "width": "@outputs('Get_Image_Information_Base')?['body/width']",
+              "height": "@outputs('Get_Image_Information_Base')?['body/height']",
+              "imageFile/body": "@body('Download_a_file_or_an_image_TOP')",
+              "imageFile/fileName": "ink.png"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Upload_a_file_or_an_image": {
+          "runAfter": {
+            "Composite": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "ae2b6226-523a-478a-88dd-bae0d110c5b1"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_commondataserviceforapps",
+              "operationId": "UpdateEntityFileImageFieldContent",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_commondataserviceforapps"
+            },
+            "parameters": {
+              "entityName": "contacts",
+              "recordId": "@triggerBody()['text']",
+              "fileImageFieldName": "new_floorplanmerged",
+              "item": "@body('Composite')",
+              "x-ms-file-name": "merged.png"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        },
+        "Get_Image_Information_Top": {
+          "runAfter": {
+            "Get_Image_Information_Base": [
+              "Succeeded"
+            ]
+          },
+          "metadata": {
+            "operationMetadataId": "962fb434-f285-493f-8093-250f1a718d76"
+          },
+          "type": "OpenApiConnection",
+          "inputs": {
+            "host": {
+              "connectionName": "shared_encodiandocumentmanager",
+              "operationId": "GetImageInfo",
+              "apiId": "/providers/Microsoft.PowerApps/apis/shared_encodiandocumentmanager"
+            },
+            "parameters": {
+              "operation/fileContent": "@body('Download_a_file_or_an_image___BASE')"
+            },
+            "authentication": "@parameters('$authentication')"
+          }
+        }
+      }
+    },
+    "templateName": null
+  },
+  "schemaVersion": "1.0.0.0"
+}

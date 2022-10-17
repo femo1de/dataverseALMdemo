@@ -1,0 +1,13 @@
+App As appinfo:
+    BackEnabled: =false
+    OnStart: =
+
+    ModelDrivenFormIntegration As hostControl.ModelDrivenFormHostControlVariant:
+        DataSource: =[@Contacts]
+        OnCancel: =false
+        OnDataRefresh: =Refresh([@Contacts])
+        OnEdit: =false
+        OnNew: =false
+        OnSave: =false
+        OnView: =false
+

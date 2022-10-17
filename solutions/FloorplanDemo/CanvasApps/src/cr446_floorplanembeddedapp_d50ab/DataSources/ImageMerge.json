@@ -1,0 +1,10 @@
+[
+  {
+    "ApiId": "/providers/microsoft.powerapps/apis/shared_logicflows",
+    "FlowNameId": "fcd1fec4-899e-4487-ae00-e67e79e31ae0",
+    "Name": "ImageMerge",
+    "ServiceKind": "ConnectedWadl",
+    "Type": "ServiceInfo",
+    "WorkflowEntityId": "4edb3671-b93d-ed11-9db0-000d3adb510e"
+  }
+]

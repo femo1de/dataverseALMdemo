@@ -1,0 +1,12 @@
+App As appinfo:
+    BackEnabled: =false
+
+    ModelDrivenFormIntegration As hostControl.ModelDrivenFormHostControlVariant:
+        DataSource: =[@Accounts]
+        OnCancel: =false
+        OnDataRefresh: =Refresh([@Accounts])
+        OnEdit: =false
+        OnNew: =false
+        OnSave: =false
+        OnView: =false
+

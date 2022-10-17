@@ -1,0 +1,70 @@
+{
+  "17c89f61-4adc-495f-849d-933e9f079d45": {
+    "connectionParameters": {
+      "sku": "Enterprise",
+      "token:grantType": "code"
+    },
+    "connectionRef": {
+      "apiTier": "Premium",
+      "bypassConsent": true,
+      "displayName": "Microsoft Dataverse",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1588/1.0.1588.2938/commondataserviceforapps/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_commondataserviceforapps",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [],
+    "dependencies": {},
+    "dependents": [
+      "e267b7ae-7925-48de-8bf9-60d2d7f0b469"
+    ],
+    "id": "17c89f61-4adc-495f-849d-933e9f079d45"
+  },
+  "e267b7ae-7925-48de-8bf9-60d2d7f0b469": {
+    "connectionParameters": {
+      "workFlowCallbackUri": "https://prod-173.westeurope.logic.azure.com:443/workflows/d64d44c57dbe4db6b3a54606ba6f83e2/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=BXE-l5VN5Gmtjgw329MneVtMbF2xeKDXoVf1ua7ENG0",
+      "workflowEndpoint": "/subscriptions/ce4eb7c9-9c8b-4133-9141-bac869f4b0a7/resourceGroups/8e3ece525ce740a6b0953398c5ed05ba-9f28d4f47653e02ba903488fb5aa9653-env/providers/Microsoft.Logic/workflows/cdb5fc34-d3b4-3c2d-27cd-aee5df659c65",
+      "workflowEntityId": "4edb3671-b93d-ed11-9db0-000d3adb510e",
+      "workflowName": "cdb5fc34-d3b4-3c2d-27cd-aee5df659c65",
+      "workflowPath": "/subscriptions/ce4eb7c9-9c8b-4133-9141-bac869f4b0a7/resourceGroups/8e3ece525ce740a6b0953398c5ed05ba-9f28d4f47653e02ba903488fb5aa9653-env/providers/Microsoft.Logic/workflows/cdb5fc34-d3b4-3c2d-27cd-aee5df659c65"
+    },
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Logic flows",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1534/1.0.1534.2605/logicflows/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
+      "parameterHints": {
+        "17c89f61-4adc-495f-849d-933e9f079d45": {
+          "value": "shared_commondataserviceforapps"
+        },
+        "workflowEntityId": {
+          "value": "4edb3671-b93d-ed11-9db0-000d3adb510e"
+        },
+        "workflowName": {
+          "value": "cdb5fc34-d3b4-3c2d-27cd-aee5df659c65"
+        }
+      },
+      "parameterHintsV2": {
+        "shared_commondataserviceforapps": {
+          "value": "17c89f61-4adc-495f-849d-933e9f079d45"
+        },
+        "workflowEntityId": {
+          "value": "4edb3671-b93d-ed11-9db0-000d3adb510e"
+        },
+        "workflowName": {
+          "value": "cdb5fc34-d3b4-3c2d-27cd-aee5df659c65"
+        }
+      }
+    },
+    "datasets": {},
+    "dataSources": [
+      "ImageMerge"
+    ],
+    "dependencies": {
+      "shared_commondataserviceforapps": "17c89f61-4adc-495f-849d-933e9f079d45"
+    },
+    "dependents": [],
+    "id": "e267b7ae-7925-48de-8bf9-60d2d7f0b469"
+  }
+}
