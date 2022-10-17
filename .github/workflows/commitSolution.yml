@@ -36,7 +36,7 @@ jobs:
         solution-folder: ${{ env.solution_folder }}/${{ env.solution_name }}
         solution-type: 'Unmanaged'
         overwrite-files: true
-        process-canvas-apps
+        process-canvas-apps : true 
     - name: branch-solution, prepare it for a PullRequest
       uses: microsoft/powerplatform-actions/branch-solution@v0
       with:
