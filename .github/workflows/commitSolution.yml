@@ -28,9 +28,9 @@ jobs:
       uses: microsoft/powerplatform-actions/export-solution@v0
       with:
         environment-url: 'https://org84e5d14c.crm4.dynamics.com'
-        app-id: 74d0e8c5-b814-4bb8-9fd4-6cd0578a60e4
-        client-secret: U5p8Q~XU1vBdpO_hlTZkQkgcUH~5gbH-C4EBTa8C
-        tenant-id: 8e3ece52-5ce7-40a6-b095-3398c5ed05ba
+        app-id: '74d0e8c5-b814-4bb8-9fd4-6cd0578a60e4'
+        client-secret: 'U5p8Q~XU1vBdpO_hlTZkQkgcUH~5gbH-C4EBTa8C'
+        tenant-id: '8e3ece52-5ce7-40a6-b095-3398c5ed05ba'
         solution-name: ${{ github.event.inputs.solution_name }}
         solution-output-file: ${{ github.event.inputs.solution_exported_folder}}/${{ github.event.inputs.solution_name }}.zip
 
