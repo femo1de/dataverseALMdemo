@@ -4,10 +4,6 @@ on:
     
 env:
   #edit your values here
-  ENVIRONMENT_URL: 'https://org84e5d14c.crm4.dynamics.com'
-  TENANT_ID: 8e3ece52-5ce7-40a6-b095-3398c5ed05ba
-  solution_exported_folder: 'out/exported/'
-  solution_folder: 'out/solutions/'
   solution_target_folder: 'solutions/'
   solution_name: ${{ github.event.client_payload.solutionName }}
   solution_release_folder: release/
@@ -25,8 +21,8 @@ jobs:
     - name: Pack solution
       uses: microsoft/powerplatform-actions/pack-solution@v0
       with:
-        solution-folder: ${{ env.solution_source_folder }}/${{ env.solution_name }}
-        solution-file: ${{ env.solution_outbound_folder }}/${{ env.solution_name }}.zip
+        solution-folder: ${{ env.solution_target_folder }}/${{ env.solution_name }}
+        solution-file: ${{ env.solution_target_folder }}/${{ env.solution_name }}.zip
         solution-type: Unmanaged
 
     - name: Upload the ready to ship solution to GH artifact store
