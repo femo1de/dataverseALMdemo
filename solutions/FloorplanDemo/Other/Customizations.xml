@@ -5,6 +5,12 @@
   <Workflows />
   <FieldSecurityProfiles />
   <Templates />
+  <EntityImageConfigs>
+    <EntityImageConfig>
+      <parententitylogicalname>cr600_pictures</parententitylogicalname>
+      <primaryimageattribute>cr600_picture</primaryimageattribute>
+    </EntityImageConfig>
+  </EntityImageConfigs>
   <EntityMaps />
   <EntityRelationships />
   <OrganizationSettings />

@@ -82,6 +82,7 @@
     <RootComponents>
       <RootComponent type="1" schemaName="account" behavior="2" />
       <RootComponent type="1" schemaName="contact" behavior="1" />
+      <RootComponent type="1" schemaName="cr600_pictures" behavior="2" />
       <RootComponent type="29" id="{4edb3671-b93d-ed11-9db0-000d3adb510e}" behavior="0" />
       <RootComponent type="62" schemaName="cr446_TestApp" behavior="0" />
       <RootComponent type="80" schemaName="cr446_TestApp" behavior="0" />
@@ -91,19 +92,7 @@
     <MissingDependencies>
       <MissingDependency>
         <Required type="1" schemaName="cr600_pictures" displayName="Pictures" solution="Active" />
-        <Dependent type="300" schemaName="cr446_floorplanembeddedapp_d50ab" displayName="FloorplanEmbeddedApp" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="1" schemaName="cr600_pictures" displayName="Pictures" solution="Active" />
-        <Dependent type="300" schemaName="new_contacttest_eb3e4" displayName="ContactTest" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="1" schemaName="cr600_pictures" displayName="Pictures" solution="Active" />
-        <Dependent type="62" schemaName="cr446_TestApp" />
-      </MissingDependency>
-      <MissingDependency>
-        <Required type="1" schemaName="cr600_pictures" displayName="Pictures" solution="Active" />
-        <Dependent type="80" schemaName="cr446_TestApp" displayName="Test App" />
+        <Dependent type="1" schemaName="cr600_pictures" displayName="Pictures" />
       </MissingDependency>
       <MissingDependency>
         <Required type="60" displayName="Contact" parentDisplayName="Contact" solution="msdynce_AppCommon (9.0.4.0066)" id="{1fed44d1-ae68-4a41-bd2b-f13acac4acfa}">
