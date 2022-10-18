@@ -11,9 +11,6 @@ env:
   solution_release_folder: 'release/'
   solution_shipping_folder: 'out/'
   solution_shipping_folder_managed: 'out/managed/'
-  
-
-  
   TEST_ENVIRONMENT_URL: 'https://orgecdc3b0b.crm4.dynamics.com'
   BUILD_ENVIRONMENT_URL: 'https://org75d4870e.crm4.dynamics.com'
   TENANT_ID: 8e3ece52-5ce7-40a6-b095-3398c5ed05ba
