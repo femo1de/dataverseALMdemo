@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Entity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name LocalizedName="Pictures" OriginalName="Pictures">cr600_Pictures</Name>
+  <EntityInfo>
+    <entity Name="cr600_Pictures">
+      <attributes />
+    </entity>
+  </EntityInfo>
+  <RibbonDiffXml />
+</Entity>
