@@ -82,6 +82,7 @@
     <RootComponents>
       <RootComponent type="1" schemaName="account" behavior="2" />
       <RootComponent type="1" schemaName="contact" behavior="2" />
+      <RootComponent type="1" schemaName="task" behavior="2" />
     </RootComponents>
     <MissingDependencies>
       <MissingDependency>
